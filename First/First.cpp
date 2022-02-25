@@ -15,6 +15,11 @@ void fill(int array[], int k, int* mn)
 		array[i] = h;
 		if (h < *mn) *mn = h;
 	}
+	if (*mn >= 0)
+	{
+		cout << "В массиве нет отрицательных чисел" << endl;
+		exit(0);
+	}
 }
 
 void out(int array[], int k)
@@ -80,11 +85,6 @@ int main()
 	int mn = 100000000;
 	int arr[100];
 	fill(arr, n, &mn);
-	if (mn >= 0)
-	{
-		cout << "В массиве нет отрицательных чисел" << endl;
-		return 0;
-	}
 	int idx = search(arr, n);
 	cout << "\n";
 	cout << "Введите новый элемент массива, который хотите вставить в него: ";
